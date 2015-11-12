@@ -1,0 +1,30 @@
+name:                libjq-haskell
+version:             0.1.0.2
+synopsis:            Haskell bindings to libjq.
+homepage:            http://github.com/jtobin/libjq-haskell
+license:             MIT
+license-file:        LICENSE
+author:              Jared Tobin
+maintainer:          jared@jtobin.ca
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  cbits, include
+description:
+  Haskell bindings to libjq.
+
+library
+  default-language: Haskell2010
+  extra-libraries:  jq
+  exposed-modules:  Libjq
+
+  c-sources:        cbits/wrapper.c
+  include-dirs:     include
+  includes:         wrapper.h
+  install-includes: wrapper.h
+
+  build-depends:
+      base
+    , bytestring
+
+
